@@ -2,94 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>flyweight - design pattern</title>
-
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="style.css" type="text/css">
+  <title> Flyweight Design </title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body>
+  <script>
+    $(document).ready(function()
+    {
+        $("#container-heading-1").click(function()
+        {
+            $("#container-content-1").toggle("slow", "swing");
+            $("#container-content-1_1").toggle("slow", "swing");
+            $('html, body').animate({scrollTop: $("#container-heading-1").offset().top}, 750);
+        });
+        $("#container-heading-2").click(function()
+        {
+            $("#container-content-2").toggle("slow", "swing");
+            $('html, body').animate({scrollTop: $("#container-heading-2").offset().top}, 750);
+        });
+        $("#container-heading-3").click(function()
+        {
+            $("#container-content-3").toggle("slow", "swing");
+            $('html, body').animate({scrollTop: $("#container-heading-3").offset().top}, 750);
+        });
 
-  <!-- START HERE -->
-  <body>
-    <section id="content">
-      <header><br><br>
-        <h1> flyweight </h1>
+    $("#container-heading-4").click(function()
+    {
+        $("#container-content-4").toggle("slow", "swing");
+        $('html, body').animate({scrollTop: $("#container-heading-4").offset().top}, 750);
+    });
+});
+  </script>
+  <div class="container-title">
+    <h1>
+      flyweight design
+    </h1>
+  </div>
 
-      </header>
+  <div class="container-heading" id="container-heading-1">
+    <h2>
+      how does it work?
+    </h2>
+  </div>
 
-      <section id="part-1">
-        <header>
-          <h3>what is flyweight?</h3>
-        </header>
+  <div class="container-content" id="container-content-1">
+    <p>
+    Flyweight works by splitting up an object into an intrinsic part that can be shared with
+    other objects and an extrinsic part that is unique to that specific object. Flyweight
+    uses another software design pattern, Factory Method, as a basis. It expands upon it with
+    these intrinsic and extrinsic properties. The factory class creates the flyweight object,
+    which has various subclasses. These subclasses contain the various extrinsic parts which
+    are unique to that object, whilst the flyweight object holds all the intrinsic parts which are
+    shared by the subclasses.
+    </p>
+  </div>
+  <div class="container-content" id="container-content-1_1">
+    <img src="http://placehold.it/755x300" alt="Example Image of Flyweight Design Method Explained through a Factory.">
+    <p>Fig. 01: Flyweight Design Explained through Factory Methodology.</p>
+  </div>
 
-        <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget purus erat, sit amet volutpat felis. Sed et lectus nisl, id ultricies felis. Vivamus non ante augue, sit amet pellentesque magna. Donec eu dapibus sapien. Morbi in ipsum vel massa hendrerit porttitor. Morbi leo magna, faucibus sed vulputate lacinia, adipiscing a massa. Mauris vitae sem neque, at volutpat nisi. Nullam turpis est, porttitor et sagittis ultricies, volutpat sit amet velit. Donec euismod, tellus sit amet commodo molestie, nunc turpis tincidunt tortor, varius consequat massa eros sed ipsum. Morbi eleifend risus sed mauris elementum in ultrices tortor fermentum. Nunc auctor, mi nec tempor facilisis, nunc orci egestas elit, eu aliquet purus eros vitae libero. Aliquam turpis lectus, hendrerit id lobortis at, faucibus eget dui. Praesent ornare massa placerat nulla vestibulum eu pellentesque est adipiscing.
-          </p>
-          <p>
-            Aliquam erat volutpat. Etiam vel felis eget urna pellentesque venenatis eu et nulla.
-          </p>
-          <p>
-            Suspendisse vitae turpis id orci elementum ornare. Proin tempus tortor in velit gravida condimentum. Mauris bibendum nunc quis nibh vulputate egestas. Proin pellentesque, tortor at sodales facilisis, lacus nunc rhoncus felis, a bibendum tortor ante ut massa. Vestibulum interdum posuere feugiat. Morbi pulvinar faucibus pharetra. Nullam nisl massa, consequat sed pellentesque ac, hendrerit at nunc. Curabitur pellentesque est sit amet turpis tempor in venenatis felis hendrerit. Proin dictum molestie consequat.
-          </p>
-        </div>
-      </section>
-      <section id="part-2">
-        <div class="content">
-          <img src="http://placehold.it/650x400"><br>
+  <div class="container-heading" id="container-heading-2">
+    <h2>
+      why use it in a game?
+    </h2>
+  </div>
+  <div class="container-content" id="container-content-2">
+    <p>
+    In video games there are many examples of objects which may share some things in
+    common but also have unique features. An example of this could be textured squares on
+    a game screen. Whilst they may all share the same texture they all have a unique position
+    in the game world. The flyweight object holds the repeated texture intrinsically, whilst the
+    subclasses hold their unique co-ordinates in the game world extrinsically. This helps
+    reduce memory usage as the texture is not repeated in all the objects. Memory usage is
+    often very critical in game performance and a sizable reduction in memory usage can be
+    achieved through the flyweight method.
+    </p>
+  </div>
 
-        </div>
-      </section>
-      <section id="part-3">
-        <header>
-          <h3>how to use flyweight</h3>
-        </header>
-        <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget purus erat, sit amet volutpat felis. Sed et lectus nisl, id ultricies felis. Vivamus non ante augue, sit amet pellentesque magna. Donec eu dapibus sapien. Morbi in ipsum vel massa hendrerit porttitor. Morbi leo magna, faucibus sed vulputate lacinia, adipiscing a massa. Mauris vitae sem neque, at volutpat nisi. Nullam turpis est, porttitor et sagittis ultricies, volutpat sit amet velit. Donec euismod, tellus sit amet commodo molestie, nunc turpis tincidunt tortor, varius consequat massa eros sed ipsum. Morbi eleifend risus sed mauris elementum in ultrices tortor fermentum. Nunc auctor, mi nec tempor facilisis, nunc orci egestas elit, eu aliquet purus eros vitae libero. Aliquam turpis lectus, hendrerit id lobortis at, faucibus eget dui. Praesent ornare massa placerat nulla vestibulum eu pellentesque est adipiscing.
-          </p>
-          <p>
-            Aliquam erat volutpat. Etiam vel felis eget urna pellentesque venenatis eu et nulla.
-          </p>
-          <p>
-            Suspendisse vitae turpis id orci elementum ornare. Proin tempus tortor in velit gravida condimentum. Mauris bibendum nunc quis nibh vulputate egestas. Proin pellentesque, tortor at sodales facilisis, lacus nunc rhoncus felis, a bibendum tortor ante ut massa. Vestibulum interdum posuere feugiat. Morbi pulvinar faucibus pharetra. Nullam nisl massa, consequat sed pellentesque ac, hendrerit at nunc. Curabitur pellentesque est sit amet turpis tempor in venenatis felis hendrerit. Proin dictum molestie consequat.
-          </p>
-        </div>
-      </section>
+  <div class="container-heading" id="container-heading-3">
+    <h2>
+      factory method
+    </h2>
+  </div>
+  <div class="container-content" id="container-content-3">
+    <p>
+      The Factory Method design pattern uses a factory class that deals with object creation.
+      The factory class allows you to return one of several possible classes that share a
+      common super class. The client requests a class from the factory during the runtime and
+      the factory returns it.
+    </p>
+  </div>
 
-      <section id="part-4">
-        <header>
-          <h3>when to use flyweight</h3>
-        </header>
-        <div class="content">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget purus erat, sit amet volutpat felis. Sed et lectus nisl, id ultricies felis. Vivamus non ante augue, sit amet pellentesque magna. Donec eu dapibus sapien. Morbi in ipsum vel massa hendrerit porttitor. Morbi leo magna, faucibus sed vulputate lacinia, adipiscing a massa. Mauris vitae sem neque, at volutpat nisi. Nullam turpis est, porttitor et sagittis ultricies, volutpat sit amet velit. Donec euismod, tellus sit amet commodo molestie, nunc turpis tincidunt tortor, varius consequat massa eros sed ipsum. Morbi eleifend risus sed mauris elementum in ultrices tortor fermentum. Nunc auctor, mi nec tempor facilisis, nunc orci egestas elit, eu aliquet purus eros vitae libero. Aliquam turpis lectus, hendrerit id lobortis at, faucibus eget dui. Praesent ornare massa placerat nulla vestibulum eu pellentesque est adipiscing.
-          </p>
-          <p>
-            Aliquam erat volutpat. Etiam vel felis eget urna pellentesque venenatis eu et nulla.
-          </p>
-          <p>
-            Suspendisse vitae turpis id orci elementum ornare. Proin tempus tortor in velit gravida condimentum. Mauris bibendum nunc quis nibh vulputate egestas. Proin pellentesque, tortor at sodales facilisis, lacus nunc rhoncus felis, a bibendum tortor ante ut massa. Vestibulum interdum posuere feugiat. Morbi pulvinar faucibus pharetra. Nullam nisl massa, consequat sed pellentesque ac, hendrerit at nunc. Curabitur pellentesque est sit amet turpis tempor in venenatis felis hendrerit. Proin dictum molestie consequat.
-          </p>
-        </div>
-      </section>
-
-      <div id="blob-container">
-        <img id="blob-1" src="item01.svg" />
-        <img id="blob-2" src="item02.svg" />
-        <img id="blob-3" src="item03.svg" />
-        <img id="blob-4" src="" />
-        <img id="blob-5" src="" />
-        <img id="blob-6" src="" />
-        <img id="blob-7" src="" />
-        <img id="blob-8" src="" />
-        <img id="blob-9" src="" />
-      </div>
-    </section>
-
-    <script src="parallax.js"></script>
-  </body>
-  </html>
+  <div class="container-heading" id="container-heading-4">
+    <h2>
+      quiz
+    </h2>
+  </div>
+  <div class="container-content" id="container-content-4">
+    <p>QUIZ HERE</p>
+  </div>
+</body>
+</html>
