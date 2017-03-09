@@ -47,7 +47,7 @@ display: none;
 #closing {
 display: none;
 font-style: italic;
-} 
+}
 
 .container-title
 {
@@ -113,4 +113,48 @@ img
 {
   box-shadow: 0 7px 5px black;
   transition: 0.5s;
+}
+
+img
+{
+  background-color: white;
+}
+
+tooltip
+{
+  text-decoratio  n: underline grey;
+  color: grey;
+}
+
+tooltip:hover
+{
+  text-decoration: none;
+  color: white;
+}
+
+tooltip span
+{
+  display: none;
+}
+
+tooltip:hover span
+{
+  display: inline-flex;
+
+}
+
+span
+{
+  position: fixed;
+  width: 200px;
+  background: white;
+  height: 50%;
+  right: 50px;
+  top: 50px;
+  color: black;
+  padding: 0 5px;
+  z-index: 500;
+  text-shadow: none;
+  border-radius: 5px;
+  transition: 1s;
 }
